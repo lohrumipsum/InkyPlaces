@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">InkyPlaces</string>
+    <string name="search_hint">Search for a place…</string>
+    <string name="initial_message">Start typing to search for places.</string>
+    <string name="no_results_found">No results found.</string>
+    <string name="hours_label">Hours:</string>
+    <string name="places_api_key" translatable="false">AIzaSyDbcZUeOo2nk26w9b98jjSHpj1uPKWY6O0</string>
+</resources>
+

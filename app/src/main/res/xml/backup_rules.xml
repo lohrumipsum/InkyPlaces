@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+    This file defines rules for the Android Auto Backup feature.
+    You can specify which parts of your app's data to include or exclude from backups.
+    For more information, see https://developer.android.com/guide/topics/data/autobackup
+    -->
+    <include domain="sharedpref" path="."/>
+</full-backup-content>

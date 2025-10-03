@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.lohrumipsum.inkyplaces'
+    compileSdk 33
+
+    signingConfigs {
+        release {
+            if (project.hasProperty('INKYPLACES_RELEASE_STORE_FILE')) {
+                storeFile file(INKYPLACES_RELEASE_STORE_FILE)
+                storePassword INKYPLACES_RELEASE_STORE_PASSWORD
+                keyAlias INKYPLACES_RELEASE_KEY_ALIAS
+                keyPassword INKYPLACES_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.lohrumipsum.inkyplaces"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.5.1'
+
+    // Retrofit for networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // HTTP Logging Interceptor for debugging network calls
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+}
+

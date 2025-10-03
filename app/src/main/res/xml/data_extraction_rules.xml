@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <!--
+    This file defines rules for device-to-device data transfer.
+    You can specify which parts of your app's data can be transferred to a new device.
+    For more information, see https://developer.android.com/guide/topics/data/data-extraction-rules
+    -->
+    <cloud-backup>
+        <include domain="sharedpref" path="."/>
+    </cloud-backup>
+</data-extraction-rules>
